@@ -100,10 +100,8 @@ describe StyleChecker do
   end
 
   def pull_request_file_reviews(pull_request)
-    build = build(
-      :build,
-      repo: build(:repo, owner: build(:owner, config_enabled: false)),
-    )
+    repo = build(:repo, owner: build(:owner, config_enabled: false))
+    build = build(:build, repo: repo)
 
     StyleChecker.new(pull_request, build).review_files
 

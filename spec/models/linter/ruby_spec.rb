@@ -55,7 +55,7 @@ describe Linter::Ruby do
   private
 
   def stub_ruby_config(config = {})
-    stubbed_ruby_config = double(
+    stubbed_ruby_config = instance_double(
       Config::Ruby,
       content: config,
       serialize: Config::Serializer.yaml(config),
