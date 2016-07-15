@@ -9,7 +9,7 @@ module Config
       if legacy?
         hound_config.content
       else
-        owner_config_content.merge(parse_inherit_from(super))
+        owner_config_content.deep_merge(parse_inherit_from(super))
       end
     end
 
